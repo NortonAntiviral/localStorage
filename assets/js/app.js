@@ -1,5 +1,6 @@
 // Variables
 const tweetList = document.getElementById('tweet-list');
+
 // Event Listeners
 eventListeners();
 
@@ -56,12 +57,12 @@ function removeTweet(e) {
     }
 
     // Remove from Storage from Local Storage
-    removeTweetLocalStorage();
+    removeTweetLocalStorage(e.target.parentElement.textContent);
 }
 
 // Adds the tweets to local storage
 function addTweetLocalStorage(tweet) {
-    let tweets = getTweetsFromStorage(e.target.parentElement.textContent);
+    let tweets = getTweetsFromStorage();
 
     // Add the tweet into array
     tweets.push(tweet);
